@@ -1,3 +1,3 @@
-# travelplanner
+# chatbot
 
 A new Flutter project.

@@ -1,4 +1,4 @@
-package com.example.travelplanner
+package com.example.chatbot
 
 import io.flutter.embedding.android.FlutterActivity
 

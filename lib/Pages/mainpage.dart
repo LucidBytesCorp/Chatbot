@@ -2,17 +2,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_gpt_flutter/chat_gpt_flutter.dart';
 
-class TravelForm extends StatefulWidget {
-  const TravelForm({super.key});
+class chatForm extends StatefulWidget {
+  const chatForm({super.key});
 
   get onChanged => null;
-  static String route = '/TravelForm';
+  static String route = '/chatForm';
 
   @override
-  _TravelFormState createState() => _TravelFormState();
+  _chatFormState createState() => _chatFormState();
 }
 
-class _TravelFormState extends State<TravelForm> {
+class _chatFormState extends State<chatForm> {
   final _formKey = GlobalKey<FormState>();
   bool loading = true;
   String _destination = '';
@@ -41,7 +41,7 @@ class _TravelFormState extends State<TravelForm> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Travel Planner',
+                  'chat bot',
                   style: TextStyle(
                     fontSize: 32.0,
                     fontWeight: FontWeight.bold,
@@ -90,7 +90,7 @@ class _TravelFormState extends State<TravelForm> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your destination';
+                      return 'Please enter your details';
                     }
                     return null;
                   },
@@ -103,7 +103,7 @@ class _TravelFormState extends State<TravelForm> {
                   keyboardType: TextInputType.text,
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                    hintText: 'Duration of travel',
+                    hintText: 'Duration of chat',
                     hintStyle: const TextStyle(color: Colors.white),
                     filled: true,
                     fillColor: Colors.grey[800],
@@ -115,7 +115,7 @@ class _TravelFormState extends State<TravelForm> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter the duration of travel';
+                      return 'Please enter Semester';
                     }
                     return null;
                   },
@@ -134,20 +134,20 @@ class _TravelFormState extends State<TravelForm> {
                           color: Colors.white),
                     ),
                     const SizedBox(height: 8.0),
-                    Slider(
-                      value: _value,
-                      min: 1,
-                      max: 3,
-                      divisions: 2,
-                      onChanged: (value) {
-                        setState(() {
-                          _value = value;
-                          widget.onChanged?.call(_getValueText());
-                        });
-                      },
-                      label: _getValueText(),
-                      activeColor: Colors.blue,
-                    ),
+                    // Slider(
+                    //   value: _value,
+                    //   min: 1,
+                    //   max: 3,
+                    //   divisions: 2,
+                    //   onChanged: (value) {
+                    //     setState(() {
+                    //       _value = value;
+                    //       widget.onChanged?.call(_getValueText());
+                    //     });
+                    //   },
+                    //   label: _getValueText(),
+                    //   activeColor: Colors.blue,
+                    // ),
                   ],
                 ),
                 const SizedBox(height: 32.0),
@@ -195,8 +195,8 @@ class _TravelFormState extends State<TravelForm> {
     setState(() {
       loading = true;
     });
-    final testPrompt =
-        'Consider yourself a travel planner. write a travel itinerary to $_destination from $_from for the duration of $_duration with a $budgetText budget(if it is medium budget the estimate budget should be more than rs 15000) .[null] These are the list of sponsors if any include them in the itinerary. And make sure you have the itinerary only and the total estimate budget in indian rupees.';
+    // final testPrompt =
+    //     '';
     //Future.delayed(const Duration(seconds: 40));
     final testRequest = CompletionRequest(
       model: ChatGptModel.gpt35Turbo,

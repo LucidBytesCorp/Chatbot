@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Welcome to TravelPlanner',
+                  'Welcome to chatbot',
                   style: TextStyle(
                     fontSize: 32.0,
                     fontWeight: FontWeight.bold,
@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
           print(credential);
         });
 
-        Navigator.pushNamed(context, '/TravelForm');
+        Navigator.pushNamed(context, '/chatForm');
       } on FirebaseAuthException catch (e) {
         if (e.code == 'user-not-found') {
           setState(() {});

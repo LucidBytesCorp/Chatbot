@@ -1,6 +1,6 @@
 {
-    "name": "travelplanner",
-    "short_name": "travelplanner",
+    "name": "chatbot",
+    "short_name": "chatbot",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

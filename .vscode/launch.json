@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "travelplanner",
+            "name": "chatbot",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "travelplanner (profile mode)",
+            "name": "chatbot (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "travelplanner (release mode)",
+            "name": "chatbot (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
